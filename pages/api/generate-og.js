@@ -1,6 +1,4 @@
 import chromium from 'chrome-aws-lambda'
-const puppeteer = require('puppeteer-core');
-const fs = require('fs');
 export default async function opengraph(req, res) {
   // Parse the title
   const { title } = req.query
@@ -8,8 +6,9 @@ export default async function opengraph(req, res) {
 
   // Open the browser with the right window size
 
-  const browser = await puppeteer.launch({
+  const browser = await chromium.puppeteer.launch({
     args: [...chromium.args, "--hide-scrollbars", "--disable-web-security"],
+    executablePath: await chromium.executablePath,
     defaultViewport: chromium.defaultViewport,
     defaultViewport: { width: 1200, height: 630 },
     headless: true,
