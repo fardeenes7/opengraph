@@ -6,11 +6,12 @@ export default async function opengraph(req, res) {
   const baseURL = "http://opengraph-rosy.vercel.app"
 
   // Open the browser with the right window size
+
   const browser = await chromium.puppeteer.launch({
-    args: chromium.args,
+    args: [...chromium.args, "--hide-scrollbars", "--disable-web-security"],
+    defaultViewport: chromium.defaultViewport,
     defaultViewport: { width: 1200, height: 630 },
-    executablePath: await chromium.executablePath, // change for localhost
-    headless: chromium.headless,
+    headless: true,
     ignoreHTTPSErrors: true,
   })
 
