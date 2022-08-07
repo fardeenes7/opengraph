@@ -7,7 +7,7 @@ export default async function opengraph(req, res) {
 
   // Open the browser with the right window size
 
-  const browser = await chromium.puppeteer.launch({
+  const browser = await chromium.puppeteer-core.launch({
     args: [...chromium.args, "--hide-scrollbars", "--disable-web-security"],
     defaultViewport: chromium.defaultViewport,
     defaultViewport: { width: 1200, height: 630 },
