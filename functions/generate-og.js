@@ -42,8 +42,8 @@ const minimal_args = [
 export default async function opengraph(req, res) {
   // Parse the title
   const { title } = req.query
-  const baseURL = "http://opengraph-rosy.vercel.app"
-
+  const baseURL = "opengraph-94x.pages.dev"
+  //http://opengraph-rosy.vercel.app
   // Open the browser with the right window size
 
   const browser = await chromium.puppeteer.launch({
