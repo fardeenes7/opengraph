@@ -16,8 +16,8 @@ export default async function opengraph(req, res) {
 
   // Navigate a new browser page to the layout page
   let page = await browser.newPage()
-  console.log(`http://localhost:3000/opengraph?title=${title}`)
-  await page.goto(`http://localhost:3000/opengraph?title=${title}`, { waitUntil: 'networkidle2' })
+  //console.log(`${baseURL}/opengraph?title=${title}`)
+  await page.goto(`${baseURL}/opengraph?title=${title}`, { waitUntil: 'networkidle2' })
 
   // Take a screenshot
   const screenshotBuffer = await page.screenshot({ type: 'png' })
