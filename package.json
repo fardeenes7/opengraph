@@ -11,7 +11,8 @@
   "dependencies": {
     "chrome-aws-lambda": "^10.1.0",
     "next": "12.2.4",
-    "puppeteer-core": "^10.1.0"
+    "puppeteer-core": "^10.1.0",
+    "puppeteer": "^10.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",

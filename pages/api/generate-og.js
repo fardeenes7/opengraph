@@ -1,4 +1,5 @@
 import chromium from 'chrome-aws-lambda'
+const puppeteer = require('puppeteer-core');
 const minimal_args = [
     ...chromium.args,
     '--autoplay-policy=user-gesture-required',
@@ -42,15 +43,24 @@ const minimal_args = [
 export default async function opengraph(req, res) {
   // Parse the title
   const { title } = req.query
-  const baseURL = "opengraph-94x.pages.dev"
-  //http://opengraph-rosy.vercel.app
+  const baseURL = "http://opengraph-rosy.vercel.app"
+  //
   // Open the browser with the right window size
+
+  // const browser = await chromium.puppeteer.launch({
+  //   ignoreDefaultArgs: ['--disable-extensions'],
+  //   args: minimal_args,
+  //   executablePath: await chromium.executablePath,
+  //   defaultViewport: chromium.defaultViewport,
+  //   defaultViewport: { width: 1200, height: 630 },
+  //   headless: true,
+  //   ignoreHTTPSErrors: true,
+  // })
 
   const browser = await chromium.puppeteer.launch({
     ignoreDefaultArgs: ['--disable-extensions'],
     args: minimal_args,
     executablePath: await chromium.executablePath,
-    defaultViewport: chromium.defaultViewport,
     defaultViewport: { width: 1200, height: 630 },
     headless: true,
     ignoreHTTPSErrors: true,
