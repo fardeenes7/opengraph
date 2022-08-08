@@ -3,7 +3,7 @@ import chromium from 'chrome-aws-lambda'
 export default async function opengraph(req, res) {
   // Parse the title
   const { title } = req.query
-  const baseURL = req.headers.host
+  const baseURL = "https://opengraph-rosy.vercel.app/"
 
   // Open the browser with the right window size
   const browser = await chromium.puppeteer.launch({
